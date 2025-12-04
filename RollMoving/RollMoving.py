@@ -18,8 +18,10 @@ while remove is None or len(remove) > 0:
         ads = 0
         for dx in range(-1, 2):
             for dy in range(-1, 2):
+                if dx == 0 and dy == 0:
+                    continue
                 if (x + dx, y + dy) in grid:
                     ads += 1
-        if ads <= 4:
+        if ads < 4:
             remove.add((x, y))
 print(removed)
